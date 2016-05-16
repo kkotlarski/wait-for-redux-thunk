@@ -6,11 +6,11 @@
   "files": [
     "lib",
     "src",
-    "test"  
+    "test"
   ],
   "scripts": {
     "build": "babel src --out-dir lib",
-    "prepublish": "rm lib -fR && npm run build",
+    "prepublish": "rm -rf lib && npm run build",
     "test": "mocha --compilers js:babel-register --reporter spec test/*.js"
   },
   "keywords": [
