@@ -8,7 +8,9 @@ const waitMiddleware = (initFn, renderFn, finalFn) => {
     return store => {
         process.nextTick(function () {
             initFn(store);
-            renderFn(store);
+            if (!asyncCount) {
+                renderFn(store);
+            }
 
             process.nextTick(function () {
                 if (asyncCount === 0 && !sent) {
