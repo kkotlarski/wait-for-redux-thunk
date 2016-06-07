@@ -9,8 +9,8 @@
     "test"
   ],
   "scripts": {
-    "build": "babel src --out-dir lib",
-    "prepublish": "rm -rf lib && npm run build",
+    "build": "rm -rf lib && babel src --out-dir lib",
+    "prepublish": "npm run test && npm run build",
     "test": "mocha --compilers js:babel-register --reporter spec test/*.js"
   },
   "keywords": [
@@ -30,6 +30,7 @@
   "devDependencies": {
     "babel-cli": "^6.5.1",
     "babel-preset-es2015": "^6.5.0",
+    "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.5.2",
     "chai": "^3.5.0",
     "mocha": "^2.4.5",
@@ -37,7 +38,11 @@
   },
   "babel": {
     "presets": [
-      "es2015"
+      "es2015",
+      "stage-0"
     ]
+  },
+  "dependencies": {
+    "redux": "^3.5.2"
   }
 }
