@@ -41,12 +41,12 @@ function asyncActionError(error) {
 }
 ```
 
-
+And waitMiddleware with applyMiddleware from this module
 
 ```js
-import waitMiddleware from 'wait-for-redux-thunk';
+import {waitMiddleware, applyMiddleware} from 'wait-for-redux-thunk';
 import thunkMiddleware from 'redux-thunk';
-import {createStore, applyMiddleware} from 'redux';
+import {createStore} from 'redux';
 import {renderToString} from 'react-dom/server';
 import reducers from './reducers';
 import ReactApp from './reactApp';

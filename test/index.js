@@ -1,6 +1,6 @@
 import {assert} from 'chai';
 import sinon from 'sinon';
-import waitMiddleware, {ASYNC_START, ASYNC_END} from '../src/index';
+import {waitMiddleware, ASYNC_START, ASYNC_END} from '../src/index';
 
 describe('wait middleware', () => {
     let storeStub, createFakeStore, initFn, renderFn;
